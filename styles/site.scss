@@ -1,0 +1,456 @@
+//VARIABLES
+$color_brand: #EC3A33;
+$mobile_break: 900px;
+
+//BASE
+body {
+    margin: 0;
+    background: #fff;
+    color: 000;
+    font-family: "canada-type-gibson", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    
+    @media screen and (max-width: $mobile_break) {
+        font-size: .85em;
+    }
+}
+
+h1,h2,h3,h4,h5,h6,p,li {
+    line-height: 1.4;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color_brand;
+    letter-spacing: .03em;
+}
+h1 { 
+    font-size: 3em;
+    font-weight: 700;
+    @media screen and (max-width: 600px) {
+        font-size: 2em;
+    }
+}
+h2 { 
+    font-size: 2.25em;
+    @media screen and (max-width: 600px) {
+        font-size: 1.75em;
+    }
+}
+h3 {
+    font-size: 1.5em;
+}
+p {
+    font-weight: 300;
+}
+a {
+    color: $color_brand;
+}
+
+//UTILITIES
+@mixin list-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav {
+    @include list-reset();
+    a {
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color .25s ease;
+    }
+}
+@mixin button-reset {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    -webkit-appearance: none;
+    outline: none;
+    &:focus {
+        outline: solid 1px #000;
+    }
+}
+.btn {
+    @include button-reset();
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .75em 2em;
+    font-size: 1.15em;
+    transition: background-color .25s ease, color .25s ease;
+    
+    
+    &.btn-white {
+        color: #fff;
+        background: transparent;
+        border: solid 1px #fff;
+        font-weight: 300;
+        letter-spacing: .04em;
+        &:hover {
+            color: $color_brand;
+            background-color: #fff;
+        }
+    }
+    &.btn-primary {
+        background: $color_brand;
+        color: #fff;
+        font-weight: 600;
+        &:hover {
+            background-color: #000;
+        }
+    }
+}
+.center {
+    text-align: center;
+}
+
+//HEADER
+#header-main {
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;    
+    z-index: 1000;
+    height: 110px;
+    background: #fff;
+    transition: height .25s ease;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    @media screen and (max-width: $mobile_break) {
+        position: relative;
+        height: 50px;
+        display: block;
+    }
+}
+    #logo {
+        flex: 1 0 auto;
+
+        img {
+            height: 110px;
+            width: auto;
+            display: block;
+            float: left;
+        }
+        h1 {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 .5em;
+            transform: translateY(-50%);
+            position: absolute;
+            top: 50%;
+            transition: color .25s ease, font-size .25s ease;
+        }        
+        &:hover {
+            h1 {
+                color: #000;
+            }
+        }
+        @media screen and (max-width: $mobile_break) {
+            display: block;
+            width: 100%;
+            height: 50px;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,.25);
+            img {
+                height: 50px;
+            }
+            h1 {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                margin: 0;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            h1 {
+                font-size: 1.25em;
+            }
+        }
+    }
+    #nav-main {
+        flex: 1 0 auto;
+        .nav {
+            float: right;
+        }
+        li {
+            display: inline-block;
+
+            &:last-child {
+                margin-right: 1.75em;
+            }
+        }
+        a {
+            font-size: 1.25em;
+            padding: 1em 1.5em;
+            transition: color .25s ease;
+            &:hover {
+                color: #000;
+            }
+        }
+        @media screen and (max-width: 1100px) {
+            li:last-child {
+                margin-right: 1em;
+            }
+            a {
+                padding: 1em;
+            }
+        
+        }
+        @media screen and (max-width: $mobile_break) {
+            .nav {
+                position: absolute;
+                width: 100%;
+                background: #fff;
+                transition: max-height .25s ease;
+                max-height: 0;
+                overflow: hidden;
+                
+                .mobilenav-active-js & {
+                    max-height: 200px;
+                }
+                
+                li {
+                    display: block;
+                    text-align: center;
+                    border-top: solid 1px $color_brand;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                a {
+                    font-size: 1.5em;
+                    padding: .75em;
+                }
+                border-bottom: solid 1px $color_brand;
+            }
+        }
+    }
+        #nav-mobile-toggle {
+            @include button-reset();
+            display: none;
+            text-indent: -9000em;
+            font-size: 0;
+            width: 50px;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: opacity .25s ease;
+
+            span {
+                display: block;
+                border-bottom: solid 2px $color_brand;
+                margin: 5px 0;
+            }
+            .mobilenav-active-js & {
+                opacity: .5;
+            }
+                    
+            @media screen and (max-width: $mobile_break) {
+                display: block;
+            }
+        }
+    #nav-login {
+        flex: 0 0 auto;
+        margin-right: 5%;
+
+        @media screen and (max-width: $mobile_break) {
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+    }
+
+//PAGE SECTIONS
+.section {
+    padding: 4em 0;
+}
+.section-hero {
+    position: relative;
+    background-color: rgba(0,0,0,0.67);
+    color: #fff;
+    margin-top: 110px;
+    text-align: center;
+    
+    @media screen and (max-width: $mobile_break) {
+        margin-top: 0;
+    }
+    
+    h1 {
+        color: #fff;
+    }
+    p {
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.25em;
+        line-height: 1.6;
+        padding: 0 1em;
+    }
+}
+.hero-bgimage {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(/images/voltage-hero-office.jpg) center top no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.section-2 {
+    h2 {
+        text-align: center;
+    }
+    ul {
+        @include list-reset();
+        display: flex;
+        flex-flow: row nowrap;
+        li {
+            flex: 1 1 33.33%;
+            text-align: center;
+            padding: 1em 0;
+        }
+        img {
+            height: 125px;
+            width: auto;
+        }
+        h3 {
+            font-size: 1.1em;
+            margin: 1.75em 0 1em;
+        }
+        p {
+            width: 70%;
+            margin: 0 auto;
+            @media screen and (max-width: 1024px) {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: $mobile_break) {
+            flex-flow: column;
+            
+            img {
+                height: 75px;
+            }
+            h3 {
+                margin: 1em 0;
+            }
+        }
+    }
+    .btn {
+        margin: 2em;
+    }
+}
+
+//LOGIN MODAL
+#login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    top: 110px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dadada;
+    
+    @media screen and (max-width: $mobile_break) {
+        top: 50px;
+        position: absolute;
+    }
+    
+    .hero-bgimage {
+        opacity: .1;
+    }
+    
+    &.modal-active-js {
+        display: block;
+    }
+    
+    #login-content {
+        position: relative;
+        background: #fff;
+        padding: 3em 0 0;
+        max-width: 700px;
+        margin: 150px auto 0;
+        
+        @media screen and (max-height: 700px) {
+            margin: 0 auto;
+        }
+    }
+    #btn-login-close {
+        @include button-reset();
+        font-size: 2em;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        color: #000;
+        transition: color .25s ease;
+        &:hover {
+            color: $color_brand;
+        }
+    }
+    
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    legend {
+        text-align: center;
+        margin: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color_brand;
+        letter-spacing: .03em;
+        font-size: 2.25em;
+    }
+    input[type="email"],input[type="password"] {
+        display: block;
+        border: none;
+        border-bottom: solid 1px #d2d2d2;
+        font-size: 1em;
+        color: #000;
+        margin: 2.5em auto;
+        width: 85%;
+        
+        &::-webkit-input-placeholder { 
+            color: #B8B8B8;
+        }
+        &::-moz-placeholder {
+            color: #B8B8B8;
+        }
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        color: #B8B8B8;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 300;
+        &:hover {
+            color: $color_brand;
+        }
+    }
+    .btn {
+        display: block;
+        width: 50%;
+        float: left;
+        color: #fff;
+        margin-top: 1.5em;
+        padding: 1.5em 0;
+    }
+    #btn-login-register {
+        background-color: #B8B8B8;
+    }
+    #btn-login-signin {
+        background-color: $color_brand;
+    }
+}

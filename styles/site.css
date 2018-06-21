@@ -1,0 +1,461 @@
+/* line 6, styles/site.scss */
+body {
+  margin: 0;
+  background: #fff;
+  color: 000;
+  font-family: "canada-type-gibson", Arial, Helvetica, sans-serif;
+  font-size: 1em; }
+  @media screen and (max-width: 900px) {
+    /* line 6, styles/site.scss */
+    body {
+      font-size: .85em; } }
+
+/* line 18, styles/site.scss */
+h1, h2, h3, h4, h5, h6, p, li {
+  line-height: 1.4; }
+
+/* line 21, styles/site.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #EC3A33;
+  letter-spacing: .03em; }
+
+/* line 27, styles/site.scss */
+h1 {
+  font-size: 3em;
+  font-weight: 700; }
+  @media screen and (max-width: 600px) {
+    /* line 27, styles/site.scss */
+    h1 {
+      font-size: 2em; } }
+
+/* line 34, styles/site.scss */
+h2 {
+  font-size: 2.25em; }
+  @media screen and (max-width: 600px) {
+    /* line 34, styles/site.scss */
+    h2 {
+      font-size: 1.75em; } }
+
+/* line 40, styles/site.scss */
+h3 {
+  font-size: 1.5em; }
+
+/* line 43, styles/site.scss */
+p {
+  font-weight: 300; }
+
+/* line 46, styles/site.scss */
+a {
+  color: #EC3A33; }
+
+/* line 56, styles/site.scss */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  /* line 58, styles/site.scss */
+  .nav a {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .25s ease; }
+
+/* line 78, styles/site.scss */
+.btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  -webkit-appearance: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .75em 2em;
+  font-size: 1.15em;
+  transition: background-color .25s ease, color .25s ease; }
+  /* line 74, styles/site.scss */
+  .btn:focus {
+    outline: solid 1px #000; }
+  /* line 87, styles/site.scss */
+  .btn.btn-white {
+    color: #fff;
+    background: transparent;
+    border: solid 1px #fff;
+    font-weight: 300;
+    letter-spacing: .04em; }
+    /* line 93, styles/site.scss */
+    .btn.btn-white:hover {
+      color: #EC3A33;
+      background-color: #fff; }
+  /* line 98, styles/site.scss */
+  .btn.btn-primary {
+    background: #EC3A33;
+    color: #fff;
+    font-weight: 600; }
+    /* line 102, styles/site.scss */
+    .btn.btn-primary:hover {
+      background-color: #000; }
+
+/* line 107, styles/site.scss */
+.center {
+  text-align: center; }
+
+/* line 112, styles/site.scss */
+#header-main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  height: 110px;
+  background: #fff;
+  transition: height .25s ease;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center; }
+  @media screen and (max-width: 900px) {
+    /* line 112, styles/site.scss */
+    #header-main {
+      position: relative;
+      height: 50px;
+      display: block; } }
+
+/* line 132, styles/site.scss */
+#logo {
+  flex: 1 0 auto; }
+  /* line 135, styles/site.scss */
+  #logo img {
+    height: 110px;
+    width: auto;
+    display: block;
+    float: left; }
+  /* line 141, styles/site.scss */
+  #logo h1 {
+    display: inline-block;
+    font-size: 2em;
+    margin: 0 .5em;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    transition: color .25s ease, font-size .25s ease; }
+  /* line 151, styles/site.scss */
+  #logo:hover h1 {
+    color: #000; }
+  @media screen and (max-width: 900px) {
+    /* line 132, styles/site.scss */
+    #logo {
+      display: block;
+      width: 100%;
+      height: 50px;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25); }
+      /* line 160, styles/site.scss */
+      #logo img {
+        height: 50px; }
+      /* line 163, styles/site.scss */
+      #logo h1 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0; } }
+  @media screen and (max-width: 500px) {
+    /* line 171, styles/site.scss */
+    #logo h1 {
+      font-size: 1.25em; } }
+
+/* line 176, styles/site.scss */
+#nav-main {
+  flex: 1 0 auto; }
+  /* line 178, styles/site.scss */
+  #nav-main .nav {
+    float: right; }
+  /* line 181, styles/site.scss */
+  #nav-main li {
+    display: inline-block; }
+    /* line 184, styles/site.scss */
+    #nav-main li:last-child {
+      margin-right: 1.75em; }
+  /* line 188, styles/site.scss */
+  #nav-main a {
+    font-size: 1.25em;
+    padding: 1em 1.5em;
+    transition: color .25s ease; }
+    /* line 192, styles/site.scss */
+    #nav-main a:hover {
+      color: #000; }
+  @media screen and (max-width: 1100px) {
+    /* line 197, styles/site.scss */
+    #nav-main li:last-child {
+      margin-right: 1em; }
+    /* line 200, styles/site.scss */
+    #nav-main a {
+      padding: 1em; } }
+  @media screen and (max-width: 900px) {
+    /* line 206, styles/site.scss */
+    #nav-main .nav {
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      transition: max-height .25s ease;
+      max-height: 0;
+      overflow: hidden;
+      border-bottom: solid 1px #EC3A33; }
+      /* line 214, styles/site.scss */
+      .mobilenav-active-js #nav-main .nav {
+        max-height: 200px; }
+      /* line 218, styles/site.scss */
+      #nav-main .nav li {
+        display: block;
+        text-align: center;
+        border-top: solid 1px #EC3A33; }
+        /* line 222, styles/site.scss */
+        #nav-main .nav li:last-child {
+          margin-right: 0; }
+      /* line 226, styles/site.scss */
+      #nav-main .nav a {
+        font-size: 1.5em;
+        padding: .75em; } }
+
+/* line 234, styles/site.scss */
+#nav-mobile-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  -webkit-appearance: none;
+  outline: none;
+  display: none;
+  text-indent: -9000em;
+  font-size: 0;
+  width: 50px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity .25s ease; }
+  /* line 74, styles/site.scss */
+  #nav-mobile-toggle:focus {
+    outline: solid 1px #000; }
+  /* line 246, styles/site.scss */
+  #nav-mobile-toggle span {
+    display: block;
+    border-bottom: solid 2px #EC3A33;
+    margin: 5px 0; }
+  /* line 251, styles/site.scss */
+  .mobilenav-active-js #nav-mobile-toggle {
+    opacity: .5; }
+  @media screen and (max-width: 900px) {
+    /* line 234, styles/site.scss */
+    #nav-mobile-toggle {
+      display: block; } }
+
+/* line 259, styles/site.scss */
+#nav-login {
+  flex: 0 0 auto;
+  margin-right: 5%; }
+  @media screen and (max-width: 900px) {
+    /* line 259, styles/site.scss */
+    #nav-login {
+      margin: 0;
+      display: block;
+      width: 100%; } }
+
+/* line 271, styles/site.scss */
+.section {
+  padding: 4em 0; }
+
+/* line 274, styles/site.scss */
+.section-hero {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.67);
+  color: #fff;
+  margin-top: 110px;
+  text-align: center; }
+  @media screen and (max-width: 900px) {
+    /* line 274, styles/site.scss */
+    .section-hero {
+      margin-top: 0; } }
+  /* line 285, styles/site.scss */
+  .section-hero h1 {
+    color: #fff; }
+  /* line 288, styles/site.scss */
+  .section-hero p {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+    line-height: 1.6;
+    padding: 0 1em; }
+
+/* line 297, styles/site.scss */
+.hero-bgimage {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(/images/voltage-hero-office.jpg) center top no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* line 309, styles/site.scss */
+.section-2 h2 {
+  text-align: center; }
+
+/* line 312, styles/site.scss */
+.section-2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap; }
+  /* line 316, styles/site.scss */
+  .section-2 ul li {
+    flex: 1 1 33.33%;
+    text-align: center;
+    padding: 1em 0; }
+  /* line 321, styles/site.scss */
+  .section-2 ul img {
+    height: 125px;
+    width: auto; }
+  /* line 325, styles/site.scss */
+  .section-2 ul h3 {
+    font-size: 1.1em;
+    margin: 1.75em 0 1em; }
+  /* line 329, styles/site.scss */
+  .section-2 ul p {
+    width: 70%;
+    margin: 0 auto; }
+    @media screen and (max-width: 1024px) {
+      /* line 329, styles/site.scss */
+      .section-2 ul p {
+        width: 90%; } }
+  @media screen and (max-width: 900px) {
+    /* line 312, styles/site.scss */
+    .section-2 ul {
+      flex-flow: column; }
+      /* line 340, styles/site.scss */
+      .section-2 ul img {
+        height: 75px; }
+      /* line 343, styles/site.scss */
+      .section-2 ul h3 {
+        margin: 1em 0; } }
+
+/* line 348, styles/site.scss */
+.section-2 .btn {
+  margin: 2em; }
+
+/* line 354, styles/site.scss */
+#login-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  top: 110px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #dadada; }
+  @media screen and (max-width: 900px) {
+    /* line 354, styles/site.scss */
+    #login-modal {
+      top: 50px;
+      position: absolute; } }
+  /* line 369, styles/site.scss */
+  #login-modal .hero-bgimage {
+    opacity: .1; }
+  /* line 373, styles/site.scss */
+  #login-modal.modal-active-js {
+    display: block; }
+  /* line 377, styles/site.scss */
+  #login-modal #login-content {
+    position: relative;
+    background: #fff;
+    padding: 3em 0 0;
+    max-width: 700px;
+    margin: 150px auto 0; }
+    @media screen and (max-height: 700px) {
+      /* line 377, styles/site.scss */
+      #login-modal #login-content {
+        margin: 0 auto; } }
+  /* line 388, styles/site.scss */
+  #login-modal #btn-login-close {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    -webkit-appearance: none;
+    outline: none;
+    font-size: 2em;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    color: #000;
+    transition: color .25s ease; }
+    /* line 74, styles/site.scss */
+    #login-modal #btn-login-close:focus {
+      outline: solid 1px #000; }
+    /* line 396, styles/site.scss */
+    #login-modal #btn-login-close:hover {
+      color: #EC3A33; }
+  /* line 401, styles/site.scss */
+  #login-modal fieldset {
+    border: none;
+    margin: 0;
+    padding: 0; }
+  /* line 406, styles/site.scss */
+  #login-modal legend {
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #EC3A33;
+    letter-spacing: .03em;
+    font-size: 2.25em; }
+  /* line 415, styles/site.scss */
+  #login-modal input[type="email"], #login-modal input[type="password"] {
+    display: block;
+    border: none;
+    border-bottom: solid 1px #d2d2d2;
+    font-size: 1em;
+    color: #000;
+    margin: 2.5em auto;
+    width: 85%; }
+    /* line 424, styles/site.scss */
+    #login-modal input[type="email"]::-webkit-input-placeholder, #login-modal input[type="password"]::-webkit-input-placeholder {
+      color: #B8B8B8; }
+    /* line 427, styles/site.scss */
+    #login-modal input[type="email"]::-moz-placeholder, #login-modal input[type="password"]::-moz-placeholder {
+      color: #B8B8B8; }
+  /* line 431, styles/site.scss */
+  #login-modal a {
+    display: block;
+    text-decoration: none;
+    color: #B8B8B8;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300; }
+    /* line 438, styles/site.scss */
+    #login-modal a:hover {
+      color: #EC3A33; }
+  /* line 442, styles/site.scss */
+  #login-modal .btn {
+    display: block;
+    width: 50%;
+    float: left;
+    color: #fff;
+    margin-top: 1.5em;
+    padding: 1.5em 0; }
+  /* line 450, styles/site.scss */
+  #login-modal #btn-login-register {
+    background-color: #B8B8B8; }
+  /* line 453, styles/site.scss */
+  #login-modal #btn-login-signin {
+    background-color: #EC3A33; }
+
+/*# sourceMappingURL=site.css.map */
